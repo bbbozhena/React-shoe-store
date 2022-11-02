@@ -6,7 +6,23 @@ function App() {
   return (
     <div className="wrapper clear">
       <Header />
-      <Content />
+      <div>
+        <h1>All shoes</h1>
+        <div className="d-flex flex-wrap justify-center ">
+          <Content />
+          <Content />
+          <Content />
+          <Content />
+          <Content />
+          <Content />
+          <Content />
+          <Content />
+          <Content />
+          <Content />
+          <Content />
+          <Content />
+        </div>
+      </div>
     </div>
   );
 }
