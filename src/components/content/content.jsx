@@ -1,5 +1,8 @@
 import "../content/content.scss"
 import Card from "../card/card";
+import { useState } from "react";
+
+
 function Content () {
     const data = [{
         img:"/img/sneakers/1.jpg",
@@ -63,13 +66,28 @@ function Content () {
     }
     
 ];
+const[value, setValue]=useState("");
+
+const filterSneakers = data.filter(item =>{
+    return item.title.toLowerCase().includes(value.toLowerCase())
+})
+
 
     return(
-        <>
-        {data.map((item)=>{
-            return <Card item={item}/>
+        <div>
+            <div className="d-flex align-center justify-between">
+            <h1>Все взуття</h1>
+            <div className="search d-flex align-center mr-50">
+            <img className="mr-10" src="/img/furfur.svg"/>
+            <input onChange={(e) => setValue(e.target.value)} />
+            </div>
+            </div>
+        <div className="d-flex flex-wrap card-item justify-center">
+        {filterSneakers.map((item, id)=>{
+            return <Card item={item} key={id}/>
         })}
-        </>
+        </div>
+        </div>
     )
 }
 export default Content;
