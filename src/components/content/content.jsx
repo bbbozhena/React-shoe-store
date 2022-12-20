@@ -1,6 +1,6 @@
-import "../content/content.scss"
-import Card from "../card/card";
 import { useState } from "react";
+import "./Content.scss";
+import Card from "../Card/Card";
 
 
 function Content () {

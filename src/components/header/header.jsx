@@ -1,5 +1,12 @@
-import "../header/header.scss"
+import "./Header.scss";
+import Drawer from "../Drawer/Drawer";
+
 function Header () {
+  function showDrawers () {
+    console.log("ok");
+    <Drawer />
+  }
+
     return (
         <div>
           <header className='d-flex justify-between align-center p-40' >
@@ -11,8 +18,8 @@ function Header () {
             </div>
             </div>
             <ul className='d-flex'>
-              <li className='mr-30'> <img width={18} height={18} src="/img/cart.svg" alt="Cart"/> <span>1200грн</span> </li>
-              <li> <img width={18} height={18} src="/img/user.svg" alt="User"/> </li>
+              <li onClick={showDrawers} className='mr-30'> <img width={18} height={18} src="/img/cart.svg" alt="Cart"/> <span>1200грн</span> </li>
+              <li> <img width={18} height={18} src="/img/user.svg" alt="User"/></li>
             </ul>
           </header>
      
