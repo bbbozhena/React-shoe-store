@@ -1,10 +1,10 @@
 import Header from "../Header/Header";
 import Content from "../Content/Content";
 import "./App.scss";
+import Drawer from "../Drawer/Drawer.jsx";
 
 function App() {
   return (
-    <>
       <div className="wrapper clear">
         <Header />
         <div>
@@ -13,7 +13,6 @@ function App() {
           </div>
         </div>
       </div>
-    </>
   );
 }
 
