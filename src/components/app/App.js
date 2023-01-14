@@ -1,5 +1,5 @@
 import Header from "../Header/Header";
-import Content from "../Content/Content";
+import Content from "../Content/Content.tsx";
 import "./App.scss";
 import Drawer from "../Drawer/Drawer.jsx";
 
