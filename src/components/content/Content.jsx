@@ -1,15 +1,17 @@
 import { useState } from "react";
-import { ProductItem } from "../../store/State";
 import React from "react";
 import "./Content.scss";
 import Card from "../Card/Card";
 import { useSelector } from "react-redux"
 
 function Content() {
+
+    const {products} = useSelector(
+        (state) => state.products
+    );
+
     const [value, setValue] = useState("");
   
-  const products = useSelector((state: ProductItem[]) => state)
-
   const filterSneakers = products.filter((item) => {
     return item.title.toLowerCase().includes(value.toLowerCase());
   });

@@ -1,18 +1,18 @@
 import Header from "../Header/Header";
-import Content from "../Content/Content.tsx";
+import Content from "../Content/Content";
 import "./App.scss";
 import Drawer from "../Drawer/Drawer.jsx";
 
 function App() {
   return (
-      <div className="wrapper clear">
-        <Header />
-        <div>
-          <div className="d-flex flex-wrap justify-center ">
-            <Content />
-          </div>
+    <div className="wrapper clear">
+      <Header />
+      <div>
+        <div className="d-flex flex-wrap justify-center ">
+          <Content />
         </div>
       </div>
+    </div>
   );
 }
 
