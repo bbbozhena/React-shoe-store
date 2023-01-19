@@ -1,7 +1,7 @@
 import Header from "../Header/Header";
 import Content from "../Content/Content";
 import "./App.scss";
-import Drawer from "../Drawer/Drawer.jsx";
+import React from "react";
 
 function App() {
   return (
