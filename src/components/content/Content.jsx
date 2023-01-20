@@ -9,8 +9,6 @@ import Header from "../Header/Header";
 function Content() {
   const { products } = useSelector((state) => state);
 
-  console.log(products);
-
   const [value, setValue] = useState("");
 
   const filterSneakers = products.filter((item) => {

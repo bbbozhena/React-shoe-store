@@ -2,8 +2,11 @@ import "./Header.scss";
 import Drawer from "../Drawer/Drawer";
 import React from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 function Header() {
+  const { products } = useSelector((state) => state);
+
   return (
     <div>
       <header className="d-flex justify-between align-center p-40">
@@ -22,7 +25,7 @@ function Header() {
             <Link to="/drawer">
               <img width={18} height={18} src="/img/cart.svg" alt="Cart" />{" "}
             </Link>
-            <span>1200грн</span>{" "}
+            <span>12000грн</span>{" "}
           </li>
           <li>
             {" "}
