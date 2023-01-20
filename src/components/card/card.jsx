@@ -3,8 +3,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { ADD } from "../../store/productSlice";
 
 function Card({ item }) {
+  const dispatch = useDispatch();
   return (
     <>
       <div className="card m-20">
@@ -19,10 +21,8 @@ function Card({ item }) {
             <b>{item.price}</b>
           </div>
           <button
-            disabled={item.added}
-            onClick={() => {
-              
-            }}
+            onClick={() => dispatch(ADD(item))}
+            disabled={item.added ? true : false}
           >
             <img width={11} height={11} src="/img/btn-plus.svg" alt="Plus" />
           </button>
