@@ -1,10 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 import productReducer from "./productSlice";
-import {drawerSlice} from "./drawerSlice"
 
-export default configureStore({
+export const store = configureStore({
   reducer: {
     products: productReducer,
-    drawerSlice:drawerSlice
   },
 });
+
+export default store;

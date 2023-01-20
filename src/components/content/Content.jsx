@@ -3,11 +3,11 @@ import React from "react";
 import "./Content.scss";
 import Card from "../Card/Card";
 import { useSelector } from "react-redux";
-
+import Drawer from "../Drawer/Drawer";
 
 function Content() {
   const { products } = useSelector((state) => state.products);
-
+  
   const [value, setValue] = useState("");
 
   const filterSneakers = products.filter((item) => {
@@ -28,6 +28,7 @@ function Content() {
           return <Card item={item} key={id} />;
         })}
       </div>
+      <Drawer/>
     </div>
   );
 }

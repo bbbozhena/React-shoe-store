@@ -2,12 +2,9 @@ import "./Card.scss";
 import React from "react";
 import PropTypes from "prop-types";
 import { useState } from "react";
-import { add, store } from "../../store/drawerSlice";
 import { useSelector, useDispatch } from "react-redux";
 
 function Card({ item }) {
-  const [basket, setBasket] = useState([]);
-
   return (
     <>
       <div className="card m-20">
@@ -22,9 +19,9 @@ function Card({ item }) {
             <b>{item.price}</b>
           </div>
           <button
+            disabled={item.added}
             onClick={() => {
-              console.log("ok");
-              store.dispatch(add(item));
+              
             }}
           >
             <img width={11} height={11} src="/img/btn-plus.svg" alt="Plus" />
