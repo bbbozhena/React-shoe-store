@@ -11,18 +11,17 @@ function Drawer() {
     <>
       <div className="drawer-block">
         <h2>Корзина</h2>
-        <div className="basket-item">
-          <img src="" alt=""></img>
-
-          {filteredProducts.map((product, i) => (
+        {filteredProducts.map((product, i) => (
+          <div key={i} className="basket-item">
+            <img  src={`product.img`} alt=""></img>
             <div key={i} className="basket-item-inf">
-              <p>{product.id}</p>
+              <p>{product.title}</p>
               <span></span>
             </div>
-          ))}
+          </div>
+        ))}
 
-          <button></button>
-        </div>
+        <button></button>
       </div>
     </>
   );

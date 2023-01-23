@@ -20,10 +20,10 @@ function Content() {
       <div className="wrapper clear">
         <Header />
       </div>
-      <div className=" wrapper clear d-flex flex-wrap justify-center">
-        <div className="d-flex align-center justify-between">
+      <div className=" wrapper clear flex   ">
+        <div className="d-flex align-center justify-between ">
           <h1>Все взуття</h1>
-          <div className="search d-flex align-center mr-50">
+          <div className="search mr-40">
             <img className="mr-10" src="/img/furfur.svg" />
             <input onChange={(e) => setValue(e.target.value)} />
           </div>
