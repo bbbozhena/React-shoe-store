@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Drawer from "../Drawer/Drawer";
 import { useState } from "react";
+import Content from "../Content/Content";
 
 function Header() {
   const { products } = useSelector((state) => state);
@@ -11,7 +12,7 @@ function Header() {
   const [show, setShow] = useState(false);
 
   const openDrawer = () => {
-    return setShow(true);
+    setShow(!show);
   };
 
   return (
@@ -28,12 +29,11 @@ function Header() {
         </div>
         <ul className="d-flex">
           <li className="mr-30">
-            {" "}
             <button className="mr-10 p-4  " onClick={openDrawer}>
               <img width={18} height={18} src="/img/cart.svg" alt="Cart" />{" "}
             </button>
             {show ? <Drawer /> : null}
-            <span>12000грн</span>{" "}
+            <span>12000грн</span>
           </li>
           <li>
             <img width={18} height={35} src="/img/user.svg" alt="User" />
