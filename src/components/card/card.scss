@@ -19,3 +19,9 @@
     position: absolute;
     cursor: pointer;
 }
+.add-to-basket{
+    &:hover {
+        color: red;
+    }
+}
+

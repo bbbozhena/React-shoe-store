@@ -21,6 +21,7 @@ function Card({ item }) {
             <b>{item.price}</b>
           </div>
           <button
+            className="add-to-basket"
             onClick={() => dispatch(ADD(item))}
             disabled={item.added ? true : false}
           >
