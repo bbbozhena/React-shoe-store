@@ -12,17 +12,22 @@ function Drawer() {
     <>
       <div className="drawer-block">
         <h2>Корзина</h2>
-        {filteredProducts.map((product, i) => (
-          <div key={i} className="basket-item">
-            <img src={`product.img`} alt=""></img>
-            <div key={i} className="basket-item-inf">
-              <p>{product.title}</p>
-              <span></span>
+        <div className=" justify-center align-center">
+          {filteredProducts.map((product, i) => (
+            <div
+              key={i}
+              className="basket-item d-flex justify-center align-center "
+            >
+              <img src={`${product.img}`} width={80} height={80} alt=""></img>
+              <div key={i} className="basket-item-inf">
+                <p>{product.title}</p>
+                <span>{product.price}</span>
+              </div>
+              <button className="ml-1"></button>
             </div>
-          </div>
-        ))}
-
-        <button></button>
+          ))}
+        </div>
+        <p className=" mt-10">Загальна вартість:</p>
       </div>
     </>
   );

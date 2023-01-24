@@ -1,6 +1,15 @@
 .drawer-block {
+    border-radius:5% ;
+    padding: 1% 2%;
     position: absolute;
     width: 385px;
-    background: #ffffff;
+    background: #4b4b4b37;
     box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
+}
+.basket-item{
+    padding: 1% 3%;
+    margin-top: 3%;
+    border: 0.5px solid #dddcdc;
+    border-radius: 20px;
+    background: rgb(255, 255, 255);
 }
