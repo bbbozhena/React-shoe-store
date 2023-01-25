@@ -1,6 +1,7 @@
 import "./Drawer.scss";
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { DELETE } from "../../store/productSlice";
 
 function Drawer() {
   const { products } = useSelector((state) => state);
@@ -11,7 +12,7 @@ function Drawer() {
   return (
     <>
       <div className="drawer-block">
-        <h2>Корзина</h2>
+        <h2 className="text-white">Корзина</h2>
         <div className=" justify-center align-center">
           {filteredProducts.map((product, i) => (
             <div
@@ -23,7 +24,12 @@ function Drawer() {
                 <p>{product.title}</p>
                 <span>{product.price}</span>
               </div>
-              <button className="ml-1"></button>
+              <button
+                onClick={() => dispatch(DELETE(product.id))}
+                className="ml-1"
+              >
+                -
+              </button>
             </div>
           ))}
         </div>

@@ -1,9 +1,10 @@
 .drawer-block {
+    z-index: 1;
     border-radius:5% ;
     padding: 1% 2%;
     position: absolute;
     width: 385px;
-    background: #4b4b4b37;
+    background: #4b4b4bab;
     box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
 }
 .basket-item{

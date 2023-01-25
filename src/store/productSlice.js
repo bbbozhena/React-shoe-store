@@ -115,6 +115,19 @@ export const productSlice = createSlice({
           };
       });
     },
+    DELETE: (state, action) => {
+      console.log("delete");
+      return state.map((product) => {
+        if (product.id !== action.payload) {
+          return product;
+        } else {
+          return {
+            ...product,
+            added: false,
+          };
+        }
+      });
+    },
   },
 });
-export const { ADD } = productSlice.actions;
+export const { ADD, DELETE } = productSlice.actions;
