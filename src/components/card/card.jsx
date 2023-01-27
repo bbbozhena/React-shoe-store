@@ -18,7 +18,7 @@ function Card({ item }) {
         <div className="d-flex justify-between align-center">
           <div className="d-flex flex-column">
             <span>Ціна:</span>
-            <b>{item.price}</b>
+            <b>{item.price} грн</b>
           </div>
           <button
             className="add-to-basket"

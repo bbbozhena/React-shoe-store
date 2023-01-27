@@ -2,10 +2,17 @@ import "./Drawer.scss";
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { DELETE } from "../../store/productSlice";
+import { useState } from "react";
+import { useEffect } from "react";
 
 function Drawer() {
   const { products } = useSelector((state) => state);
   const filteredProducts = products.filter((product) => product.added === true);
+
+  let total = 0;
+  filteredProducts.map((value, index) => {
+    total += parseInt(value.price);
+  });
 
   const dispatch = useDispatch();
 
@@ -33,7 +40,7 @@ function Drawer() {
             </div>
           ))}
         </div>
-        <p className=" mt-10">Загальна вартість:</p>
+        <p className=" mt-10">Загальна вартість:{total} грн</p>
       </div>
     </>
   );
