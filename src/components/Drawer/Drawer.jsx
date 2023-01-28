@@ -10,9 +10,9 @@ function Drawer() {
   const filteredProducts = products.filter((product) => product.added === true);
 
   let total = 0;
-  filteredProducts.map((value, index) => {
-    total += parseInt(value.price);
-  });
+  total = filteredProducts.reduce((acc, item) => {
+    return (acc += item.price);
+  }, 0);
 
   const dispatch = useDispatch();
 
