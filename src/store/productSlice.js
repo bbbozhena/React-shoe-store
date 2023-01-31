@@ -103,6 +103,12 @@ export const filteredProducts = (products) => {
   return products.filter((product) => product.added === true);
 };
 
+export const total = filteredProducts(initialState)
+    .map((product) => product)
+    .reduce((acc, product) => {
+      return (acc += product.price);
+    }, 0);
+
 export const productSlice = createSlice({
   name: "products",
   initialState: initialState,

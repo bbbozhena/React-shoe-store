@@ -4,14 +4,16 @@ import { useSelector, useDispatch } from "react-redux";
 import { DELETE, TOTAL } from "../../store/productSlice";
 import { useState } from "react";
 import { useEffect } from "react";
-import { filteredProducts } from "../../store/productSlice";
+import { filteredProducts, total } from "../../store/productSlice";
 
 function Drawer() {
   const { products } = useSelector((state) => state);
 
-  // const total = filteredProducts.reduce((acc, item) => {
-  //   return (acc += item.price);
-  // }, 0);
+  // const total = filteredProducts(products)
+  //   .map((product) => product)
+  //   .reduce((acc, item) => {
+  //     return (acc += item.price);
+  //   }, 0);
 
   const dispatch = useDispatch();
   return (
@@ -40,7 +42,7 @@ function Drawer() {
           ))}
         </div>
 
-        <p className=" mt-10">Загальна вартість: грн</p>
+        <p className=" mt-10">Загальна вартість:{total}грн</p>
       </div>
     </>
   );
