@@ -108,11 +108,11 @@ export const productSlice = createSlice({
       return state.map((product) => {
         if (product.id !== action.payload.id) {
           return product;
-        } else
-          return {
-            ...product,
-            added: true,
-          };
+        }
+        return {
+          ...product,
+          added: true,
+        };
       });
     },
     DELETE: (state, action) => {
@@ -120,14 +120,13 @@ export const productSlice = createSlice({
       return state.map((product) => {
         if (product.id !== action.payload) {
           return product;
-        } else {
-          return {
-            ...product,
-            added: false,
-          };
         }
+        return {
+          ...product,
+          added: false,
+        };
       });
     },
   },
 });
-export const { ADD, DELETE} = productSlice.actions;
+export const { ADD, DELETE } = productSlice.actions;
