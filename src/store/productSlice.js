@@ -99,6 +99,10 @@ const initialState = [
   },
 ];
 
+export const filteredProducts = (products) => {
+  return products.filter((product) => product.added === true);
+};
+
 export const productSlice = createSlice({
   name: "products",
   initialState: initialState,
