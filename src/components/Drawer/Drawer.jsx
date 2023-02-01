@@ -9,11 +9,9 @@ import { filteredProducts, total } from "../../store/productSlice";
 function Drawer() {
   const { products } = useSelector((state) => state);
 
-  // const total = filteredProducts(products)
-  //   .map((product) => product)
-  //   .reduce((acc, item) => {
-  //     return (acc += item.price);
-  //   }, 0);
+  // const total = filteredProducts(products).reduce((acc, item) => {
+  //   return (acc += item.price);
+  // }, 0);
 
   const dispatch = useDispatch();
   return (
@@ -42,7 +40,10 @@ function Drawer() {
           ))}
         </div>
 
-        <p className=" mt-10">Загальна вартість:{total}грн</p>
+        <p className=" mt-10">
+          Загальна вартість:
+          {total(products)}грн
+        </p>
       </div>
     </>
   );
