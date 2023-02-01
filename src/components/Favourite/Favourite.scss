@@ -1,0 +1,16 @@
+.favourite-block {
+    z-index: 1;
+    border-radius: 5%;
+    padding: 1% 2%;
+    position: absolute;
+    max-width: 385px;
+    background: #4b4b4bab;
+    box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
+}
+.favourite-item {
+    padding: 1% 3%;
+    margin-top: 3%;
+    border: 0.5px solid #dddcdc;
+    border-radius: 20px;
+    background: rgb(255, 255, 255);
+}
