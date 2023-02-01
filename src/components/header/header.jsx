@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import Drawer from "../Drawer/Drawer";
 import { useState } from "react";
 import Content from "../Content/Content";
+import { total } from "../../store/productSlice";
 
 function Header() {
   const { products } = useSelector((state) => state);
@@ -33,7 +34,7 @@ function Header() {
               <img width={18} height={18} src="/img/cart.svg" alt="Cart" />{" "}
             </button>
             {show ? <Drawer /> : null}
-            <span>12000грн</span>
+            <span>{total(products)}грн</span>
           </li>
           <li>
             <img width={18} height={35} src="/img/user.svg" alt="User" />

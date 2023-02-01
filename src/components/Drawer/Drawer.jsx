@@ -9,10 +9,6 @@ import { filteredProducts, total } from "../../store/productSlice";
 function Drawer() {
   const { products } = useSelector((state) => state);
 
-  // const total = filteredProducts(products).reduce((acc, item) => {
-  //   return (acc += item.price);
-  // }, 0);
-
   const dispatch = useDispatch();
   return (
     <>
