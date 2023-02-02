@@ -120,7 +120,7 @@ export const filteredFavourites = (products) => {
 };
 
 export const total = (products) => {
-  filteredProducts(products).reduce((acc, item) => {
+  return filteredProducts(products).reduce((acc, item) => {
     return (acc += item.price);
   }, 0);
 };
