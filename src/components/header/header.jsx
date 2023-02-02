@@ -37,7 +37,7 @@ function Header() {
             <button className="mr-10 p-4  " onClick={openDrawer}>
               <img width={18} height={18} src="/img/cart.svg" alt="Cart" />{" "}
             </button>
-            {show ? <Drawer /> : null}
+            {show ? <Drawer close={()=>setShow(false)} /> : null}
             <span>{total(products)}грн</span>
           </li>
           <li>

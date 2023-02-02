@@ -6,13 +6,13 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { filteredProducts, total } from "../../store/productSlice";
 
-function Drawer() {
+function Drawer({close}) {
   const { products } = useSelector((state) => state);
 
   const dispatch = useDispatch();
   return (
-    <>
-      <div className="drawer-block">
+    <div onClick={()=>{close()}}>
+      <div  className="drawer-block">
         <h2 className="text-white">Корзина</h2>
 
         <div className=" justify-center align-center">
@@ -41,7 +41,7 @@ function Drawer() {
           {total(products)}грн
         </p>
       </div>
-    </>
+    </div>
   );
 }
 
