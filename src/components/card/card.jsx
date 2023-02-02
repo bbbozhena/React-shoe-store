@@ -3,7 +3,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { ADD } from "../../store/productSlice";
+import { ADD,ADDFAVOURITE } from "../../store/productSlice";
 
 function Card({ item }) {
   const dispatch = useDispatch();
@@ -11,7 +11,10 @@ function Card({ item }) {
     <>
       <div className="card m-20">
         <div className="favorite">
+          <button onClick={() => dispatch(ADDFAVOURITE(item))}>
           <img src="/img/unlike.svg" alt="unlike" />
+          </button>
+         
         </div>
         <img width={133} height={112} src={item.img} alt="Sneakers" />
         <h5>{item.title}</h5>

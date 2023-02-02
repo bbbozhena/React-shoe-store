@@ -1,7 +1,7 @@
 import "./Favourite.scss";
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { filteredProducts } from "../../store/productSlice";
+import { filteredFavourites, DELETEFAVOURITE } from "../../store/productSlice";
 
 function Favourite() {
   const { products } = useSelector((state) => state);
@@ -13,7 +13,7 @@ function Favourite() {
         <h2 className="text-white">Улюблене</h2>
 
         <div className=" justify-center align-center">
-          {filteredProducts(products).map((product, i) => (
+          {filteredFavourites(products).map((product, i) => (
             <div
               key={i}
               className="favourite-item d-flex justify-center align-center "
@@ -23,7 +23,12 @@ function Favourite() {
                 <p>{product.title}</p>
                 <span>{product.price}</span>
               </div>
-              <button className="ml-1">-</button>
+              <button
+                onClick={() => dispatch(DELETEFAVOURITE(product.id))}
+                className="ml-1"
+              >
+                -
+              </button>
             </div>
           ))}
         </div>

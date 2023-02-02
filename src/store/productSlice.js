@@ -8,6 +8,7 @@ const initialState = [
     price: 12999,
     quantity: 0,
     added: false,
+    fav: false,
   },
   {
     id: "1",
@@ -16,6 +17,7 @@ const initialState = [
     price: 6299,
     quantity: 0,
     added: false,
+    fav: false,
   },
   {
     id: "2",
@@ -24,6 +26,7 @@ const initialState = [
     price: 8449,
     quantity: 0,
     added: false,
+    fav: false,
   },
   {
     id: "3",
@@ -32,6 +35,7 @@ const initialState = [
     price: 15199,
     quantity: 0,
     added: false,
+    fav: false,
   },
   {
     id: "4",
@@ -40,6 +44,7 @@ const initialState = [
     price: 11299,
     quantity: 0,
     added: false,
+    fav: false,
   },
   {
     id: "5",
@@ -48,6 +53,7 @@ const initialState = [
     price: 10799,
     quantity: 0,
     added: false,
+    fav: false,
   },
   {
     id: "6",
@@ -56,6 +62,7 @@ const initialState = [
     price: 16499,
     quantity: 0,
     added: false,
+    fav: false,
   },
   {
     id: "7",
@@ -64,6 +71,7 @@ const initialState = [
     price: 13999,
     quantity: 0,
     added: false,
+    fav: false,
   },
   {
     id: "8",
@@ -72,6 +80,7 @@ const initialState = [
     price: 8599,
     quantity: 0,
     added: false,
+    fav: false,
   },
   {
     id: "9",
@@ -80,6 +89,7 @@ const initialState = [
     price: 8999,
     quantity: 0,
     added: false,
+    fav: false,
   },
   {
     id: "10",
@@ -88,6 +98,7 @@ const initialState = [
     price: 8999,
     quantity: 0,
     added: false,
+    fav: false,
   },
   {
     id: "11",
@@ -96,11 +107,16 @@ const initialState = [
     price: 8999,
     quantity: 0,
     added: false,
+    fav: false,
   },
 ];
 
 export const filteredProducts = (products) => {
   return products.filter((product) => product.added === true);
+};
+
+export const filteredFavourites = (products) => {
+  return products.filter((product) => product.fav === true);
 };
 
 export const total = (products) => {
@@ -138,6 +154,31 @@ export const productSlice = createSlice({
         };
       });
     },
+    ADDFAVOURITE: (state, action) => {
+      console.log("ok");
+      return state.map((product) => {
+        if (product.id !== action.payload.id) {
+          return product;
+        }
+        return {
+          ...product,
+          fav: true,
+        };
+      });
+    },
+    DELETEFAVOURITE: (state, action) => {
+      console.log("delete");
+      return state.map((product) => {
+        if (product.id !== action.payload) {
+          return product;
+        }
+        return {
+          ...product,
+          fav: false,
+        };
+      });
+    },
   },
 });
-export const { ADD, DELETE } = productSlice.actions;
+export const { ADD, DELETE, DELETEFAVOURITE, ADDFAVOURITE } =
+  productSlice.actions;
