@@ -1,7 +1,11 @@
 import "./Favourite.scss";
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { filteredFavourites, DELETEFAVOURITE, ADD } from "../../store/productSlice";
+import {
+  filteredFavourites,
+  DELETEFAVOURITE,
+  ADD,
+} from "../../store/productSlice";
 
 function Favourite() {
   const { products } = useSelector((state) => state);
@@ -18,7 +22,7 @@ function Favourite() {
               key={i}
               className="favourite-item d-flex justify-center align-center "
             >
-              <button onClick={() => dispatch(ADD(product.id))}>+</button>
+              <button onClick={() => dispatch(ADD(product))}>+</button>
               <img src={`${product.img}`} width={80} height={80} alt=""></img>
               <div key={product.id} className="basket-item-inf">
                 <p>{product.title}</p>

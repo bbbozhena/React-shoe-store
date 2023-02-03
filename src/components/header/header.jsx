@@ -6,7 +6,7 @@ import Drawer from "../Drawer/Drawer";
 import { useState } from "react";
 import Content from "../Content/Content";
 import { total } from "../../store/productSlice";
-import  Favourite  from "../Favourite/Favourite";
+import Favourite from "../Favourite/Favourite";
 
 function Header() {
   const { products } = useSelector((state) => state);
@@ -18,8 +18,8 @@ function Header() {
     setShow(!show);
   };
   const openFavourite = () => {
-    setShowFavourite(!showFavourite)
-  }
+    setShowFavourite(!showFavourite);
+  };
   return (
     <div>
       <header className="d-flex justify-between align-center p-40">
@@ -37,7 +37,7 @@ function Header() {
             <button className="mr-10 p-4  " onClick={openDrawer}>
               <img width={18} height={18} src="/img/cart.svg" alt="Cart" />{" "}
             </button>
-            {show ? <Drawer close={()=>setShow(false)} /> : null}
+            {show ? <Drawer /> : null}
             <span>{total(products)}грн</span>
           </li>
           <li>

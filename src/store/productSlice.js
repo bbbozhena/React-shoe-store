@@ -111,6 +111,7 @@ const initialState = [
   },
 ];
 
+
 export const filteredProducts = (products) => {
   return products.filter((product) => product.added === true);
 };
