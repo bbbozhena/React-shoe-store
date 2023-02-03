@@ -111,7 +111,6 @@ const initialState = [
   },
 ];
 
-
 export const filteredProducts = (products) => {
   return products.filter((product) => product.added === true);
 };
@@ -132,15 +131,22 @@ export const productSlice = createSlice({
   reducers: {
     ADD: (state, action) => {
       console.log("ok");
-      return state.map((product) => {
-        if (product.id !== action.payload.id) {
-          return product;
-        }
-        return {
-          ...product,
-          added: true,
-        };
-      });
+      // return state.map((product) => {
+      //   if (product.id == action.payload.id) {
+      //     return { ...product, added: true, quantity: +1 };
+      //   }
+      //   return product;
+      // });
+      const itemInCart = state.find((item) => item.id === action.payload.id);
+      if (itemInCart) {
+        itemInCart.quantity++, (itemInCart.added = true);
+      } else {
+        state.push({ ...action.payload, quantity: 1 });
+      }
+    },
+    INCREMENTQUANTITY: (state, action) => {
+      const item = state.find((item) => item.id === action.payload);
+      item.quantity++;
     },
     DELETE: (state, action) => {
       console.log("delete");
@@ -180,5 +186,5 @@ export const productSlice = createSlice({
     },
   },
 });
-export const { ADD, DELETE, DELETEFAVOURITE, ADDFAVOURITE } =
+export const { ADD, DELETE, DELETEFAVOURITE, ADDFAVOURITE, INCREMENTQUANTITY } =
   productSlice.actions;

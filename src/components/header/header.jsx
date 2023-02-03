@@ -20,6 +20,16 @@ function Header() {
   const openFavourite = () => {
     setShowFavourite(!showFavourite);
   };
+
+  const getTotalSum = () => {
+    let totalQuantity = 0;
+    let totalPrice = 0;
+    products.forEach((item) => {
+      totalQuantity += item.quantity;
+      totalPrice += item.price * item.quantity;
+    });
+    return { totalPrice, totalQuantity };
+  };
   return (
     <div>
       <header className="d-flex justify-between align-center p-40">
@@ -38,7 +48,7 @@ function Header() {
               <img width={18} height={18} src="/img/cart.svg" alt="Cart" />{" "}
             </button>
             {show ? <Drawer /> : null}
-            <span>{total(products)}грн</span>
+            <span>{getTotalSum().totalPrice}грн </span>
           </li>
           <li>
             <button className="mr-10 p-4" onClick={openFavourite}>
