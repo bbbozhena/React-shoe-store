@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import Drawer from "../Drawer/Drawer";
 import { useState } from "react";
 import Content from "../Content/Content";
-import { total } from "../../store/productSlice";
+import { getTotalSum } from "../../store/productSlice";
 import Favourite from "../Favourite/Favourite";
 
 function Header() {
@@ -21,15 +21,6 @@ function Header() {
     setShowFavourite(!showFavourite);
   };
 
-  const getTotalSum = () => {
-    let totalQuantity = 0;
-    let totalPrice = 0;
-    products.forEach((item) => {
-      totalQuantity += item.quantity;
-      totalPrice += item.price * item.quantity;
-    });
-    return { totalPrice, totalQuantity };
-  };
   return (
     <div>
       <header className="d-flex justify-between align-center p-40">
@@ -48,7 +39,7 @@ function Header() {
               <img width={18} height={18} src="/img/cart.svg" alt="Cart" />{" "}
             </button>
             {show ? <Drawer /> : null}
-            <span>{getTotalSum().totalPrice}грн </span>
+            <span>{getTotalSum(products).totalPrice}грн </span>
           </li>
           <li>
             <button className="mr-10 p-4" onClick={openFavourite}>

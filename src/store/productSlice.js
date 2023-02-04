@@ -125,6 +125,14 @@ export const total = (products) => {
   }, 0);
 };
 
+export const getTotalSum = (products) => {
+  let totalPrice = 0;
+  products.forEach((product) => {
+    totalPrice += product.price * product.quantity;
+  });
+  return { totalPrice };
+};
+
 export const productSlice = createSlice({
   name: "products",
   initialState: initialState,
