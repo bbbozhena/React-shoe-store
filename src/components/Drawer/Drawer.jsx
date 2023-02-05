@@ -46,7 +46,7 @@ function Drawer() {
 
         <p className=" mt-10">
           Загальна вартість:
-          {getTotalSum(products).totalPrice}грн
+          {getTotalSum(products)}грн
         </p>
       </div>
     </>

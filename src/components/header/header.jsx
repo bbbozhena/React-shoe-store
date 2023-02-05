@@ -39,7 +39,7 @@ function Header() {
               <img width={18} height={18} src="/img/cart.svg" alt="Cart" />{" "}
             </button>
             {show ? <Drawer /> : null}
-            <span>{getTotalSum(products).totalPrice}грн </span>
+            <span>{getTotalSum(products)}грн </span>
           </li>
           <li>
             <button className="mr-10 p-4" onClick={openFavourite}>

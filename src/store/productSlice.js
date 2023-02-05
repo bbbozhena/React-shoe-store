@@ -124,7 +124,7 @@ export const getTotalSum = (products) => {
   products.reduce((acc, item) => {
     return (totalPrice = acc += item.price * item.quantity);
   }, 0);
-  return { totalPrice };
+  return totalPrice;
 };
 
 export const productSlice = createSlice({
