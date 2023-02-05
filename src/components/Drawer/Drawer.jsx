@@ -1,10 +1,14 @@
 import "./Drawer.scss";
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { DELETE, TOTAL } from "../../store/productSlice";
+import { DELETE } from "../../store/productSlice";
 import { useState } from "react";
 import { useEffect } from "react";
-import { filteredProducts, total,INCREMENTQUANTITY } from "../../store/productSlice";
+import {
+  filteredProducts,
+  getTotalSum,
+  INCREMENTQUANTITY,
+} from "../../store/productSlice";
 
 function Drawer() {
   const { products } = useSelector((state) => state);
@@ -16,14 +20,14 @@ function Drawer() {
         <h2 className="text-white">Корзина</h2>
 
         <div className=" justify-center align-center">
-         
           {filteredProducts(products).map((product, i) => (
-            
             <div
               key={i}
               className="basket-item d-flex justify-center align-center "
             >
-               <button onClick={() => dispatch(INCREMENTQUANTITY(product.id)) }>+</button>
+              <button onClick={() => dispatch(INCREMENTQUANTITY(product.id))}>
+                +
+              </button>
               <p>{product.quantity}</p>
               <img src={`${product.img}`} width={80} height={80} alt=""></img>
               <div key={product.id} className="basket-item-inf">
@@ -42,7 +46,7 @@ function Drawer() {
 
         <p className=" mt-10">
           Загальна вартість:
-          {total(products)}грн
+          {getTotalSum(products).totalPrice}грн
         </p>
       </div>
     </>

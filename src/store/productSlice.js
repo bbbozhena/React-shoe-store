@@ -119,17 +119,11 @@ export const filteredFavourites = (products) => {
   return products.filter((product) => product.fav === true);
 };
 
-export const total = (products) => {
-  return filteredProducts(products).reduce((acc, item) => {
-    return (acc += item.price);
-  }, 0);
-};
-
 export const getTotalSum = (products) => {
   let totalPrice = 0;
-  products.forEach((product) => {
-    totalPrice += product.price * product.quantity;
-  });
+  products.reduce((acc, item) => {
+    return (totalPrice = acc += item.price * item.quantity);
+  }, 0);
   return { totalPrice };
 };
 
