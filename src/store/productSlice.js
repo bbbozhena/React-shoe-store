@@ -125,21 +125,19 @@ export const getTotalSum = (products) => {
   }, 0);
 };
 
+export const succsessAdd = () => {
+  alert("Успішно додано в корзину!");
+};
+
 export const productSlice = createSlice({
   name: "products",
   initialState: initialState,
   reducers: {
     ADD: (state, action) => {
-      console.log("ok");
-      // return state.map((product) => {
-      //   if (product.id == action.payload.id) {
-      //     return { ...product, added: true, quantity: +1 };
-      //   }
-      //   return product;
-      // });
       const itemInCart = state.find((item) => item.id === action.payload.id);
       if (itemInCart) {
         itemInCart.quantity++, (itemInCart.added = true);
+        succsessAdd();
       } else {
         state.push({ ...action.payload, quantity: 1 });
       }
