@@ -120,11 +120,9 @@ export const filteredFavourites = (products) => {
 };
 
 export const getTotalSum = (products) => {
-  let totalPrice = 0;
-  products.reduce((acc, item) => {
-    return (totalPrice = acc += item.price * item.quantity);
+  return products.reduce((acc, item) => {
+    return (acc += item.price * item.quantity);
   }, 0);
-  return totalPrice;
 };
 
 export const productSlice = createSlice({
