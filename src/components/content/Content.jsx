@@ -20,6 +20,11 @@ function Content() {
       <div className="wrapper clear">
         <Header />
       </div>
+      <div>
+        <div className="banner">
+          Banner
+        </div>
+      </div>
       <div className=" wrapper clear flex   ">
         <div className="d-flex align-center justify-between ">
           <h1>Все взуття</h1>
