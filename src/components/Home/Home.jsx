@@ -3,7 +3,7 @@ import Content from "../Content/Content";
 
 function Home() {
   return (
-    <div className="d-flex flex-wrap justify-center">
+    <div className=" flex-wrap justify-center">
       <Content />
     </div>
   );

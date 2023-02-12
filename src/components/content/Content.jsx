@@ -17,12 +17,12 @@ function Content() {
 
   return (
     <div>
-      <div className="wrapper clear">
+      <div className="wrapper clear ">
         <Header />
       </div>
       <div>
         <div className="banner">
-          Banner
+          <img src="/img/banner.png"></img>
         </div>
       </div>
       <div className=" wrapper clear flex   ">
