@@ -5,6 +5,7 @@ import Card from "../Card/Card";
 import { useSelector } from "react-redux";
 import Drawer from "../Drawer/Drawer";
 import Header from "../Header/Header";
+import Banner from "../Banner/Banner"
 
 function Content() {
   const { products } = useSelector((state) => state);
@@ -22,7 +23,7 @@ function Content() {
       </div>
       <div>
         <div className="banner">
-          <img src="/img/banner.png"></img>
+          <Banner/>
         </div>
       </div>
       <div className=" wrapper clear flex   ">
